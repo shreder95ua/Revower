@@ -203,6 +203,8 @@ async def send_to_chat(chat: str, post: Message, pfp: str):
 
     await channel.send(content=str(post.content), masquerade=Masquerade(name=user["meower_username"], avatar=f"{pfp}"))
 
+    await post.delete()
+
 
 class RevoltCog(commands.Cog):
     def __init__(self, bot: commands.Bot):
